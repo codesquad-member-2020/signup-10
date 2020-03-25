@@ -101,6 +101,13 @@ function judgeEmailBlank(targetEmail) {
   }
 }
 
+async function judgeEmailServerData(
+  targetEmail,
+  emailMmessageDOM,
+  SUCCESS_MESSAGE,
+  ERROR_OVERLAP
+) {}
+
 function insertEmailRegExpDiscriminantMessage(
   emailMessageDOM,
   ERROR_REGEXP_MESSAGE
