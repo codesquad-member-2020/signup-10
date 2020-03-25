@@ -4,8 +4,34 @@ import { ID_MESSAGE } from "./constants/log.js";
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
 
-function registerIdInputEventHandler(inputDOM, IDLogDOM, ID_MESSAGE, RegExp) {
+function registerIdInputEventHandler(
+  inputDOM,
+  IDMessageDOM,
+  ID_MESSAGE,
+  RegExp
+) {
   inputDOM.addEventListener("focusout", () => {});
+}
+
+async function judgeIDServerData(
+  targetID,
+  IDMmessageDOM,
+  SUCCESS_MESSAGE,
+  ERROR_OVERLAP
+) {
+  const url = `https://signup10.herokuapp.com/api/users/check/${targetID}`;
+  const fetchData = await fetch(url);
+  const dataJson = await fetchData.json();
+
+  if (dataJson.valid === false) {
+    IDMmessageDOM.style.color = "EB0000";
+    IDMmessageDOM.innerText = ERROR_OVERLAP;
+    return;
+  } else {
+    IDMmessageDOM.style.color = "#00c850";
+    IDMmessageDOM.innerText = SUCCESS_MESSAGE;
+    return;
+  }
 }
 
 function judgeIDRegExp(targetID, RegExp) {
@@ -20,12 +46,12 @@ function judgeIDBlank(targetID) {
   }
 }
 
-function insertIDRegExpDiscriminantMessage(messageDOM, ERROR_REGEXP_MESSAGE) {
-  messageDOM.style.color = "red";
-  messageDOM.innerText = ERROR_REGEXP_MESSAGE;
+function insertIDRegExpDiscriminantMessage(IDMessageDOM, ERROR_REGEXP_MESSAGE) {
+  IDMessageDOM.style.color = "EB0000";
+  IDMessageDOM.innerText = ERROR_REGEXP_MESSAGE;
 }
 
-function insertIDBlankDiscriminantMessage(messageDOM, DEFAULT_MESSAGE) {
-  messageDOM.style.color = "red";
-  messageDOM.innerText = DEFAULT_MESSAGE;
+function insertIDBlankDiscriminantMessage(IDMessageDOM, DEFAULT_MESSAGE) {
+  IDMessageDOM.style.color = "EB0000";
+  IDMessageDOM.innerText = DEFAULT_MESSAGE;
 }
