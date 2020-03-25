@@ -1,9 +1,10 @@
 import RegExp from "./constants/RegExp.js";
-import { ID_MESSAGE } from "./constants/message.js";
+import { ID_MESSAGE, EMAIL_MESSAGE } from "./constants/message.js";
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
 
+//--------------------ID 유효성 검사--------------------
 function registerIdInputEventHandler(
   inputDOM,
   IDMessageDOM,
@@ -73,3 +74,39 @@ function insertIDBlankDiscriminantMessage(IDMessageDOM, DEFAULT_MESSAGE) {
 }
 
 registerIdInputEventHandler(IDinputDOM, IDMessageDOM, ID_MESSAGE, RegExp);
+
+//--------------------e_mail 유효성 검사--------------------
+
+const emailInputDOM = document.querySelector("#email");
+const emailMessageDOM = document.querySelector("email_message");
+
+function registerEmailInputEventHandler(
+  emailInputDOM,
+  emailMessageDOM,
+  EMAIL_MESSAGE,
+  RegExp
+) {
+  emailInputDOM.addEventListener("focusout", () => {});
+}
+
+function judgeEmailRegExp(targetEmail, RegExp) {
+  return RegExp.test(targetEmail);
+}
+
+function judgeEmailBlank(targetEmail) {
+  if (targetEmail === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function insertEmailRegExpDiscriminantMessage(
+  emailMessageDOM,
+  ERROR_REGEXP_MESSAGE
+) {}
+
+function insertEmailBlankDiscriminantMessage(
+  emailMessageDOM,
+  DEFAULT_MESSAGE
+) {}
