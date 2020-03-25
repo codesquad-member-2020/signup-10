@@ -14,5 +14,6 @@ export const PASSWORD_MESSAGE = {
 export const EMAIL_MESSAGE = {
   DEFAULT: `이메일을 입력해 주세요.`,
   SUCCESS: `사용 가능한 이메일 입니다.`,
+  ERROR_REGEXP: `형식에 맞지 않는 이메일 입니다.`,
   ERROR_OVERLAP: `이미 사용중이거나 탈퇴한 이메일입니다.`
 };
