@@ -22,7 +22,7 @@
                 <label for="id">아이디</label>
               </h3>
               <input type="text" id="id" name="id" class="join_box" />
-              <span class="error_log_id"></span>
+              <span class="ID_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -34,7 +34,7 @@
                 name="password"
                 class="join_box"
               />
-              <span class="error_log_password"></span>
+              <span class="password_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -46,7 +46,7 @@
                 name="reconfirm_input"
                 class="join_box"
               />
-              <span class="error_log_reconfirm"></span>
+              <span class="password_reconfirm_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -113,7 +113,7 @@
             <div class="join_row">
               <h3 class="join_title"><label for="email">이메일</label></h3>
               <input type="email" name="email" id="email" class="join_box" />
-              <span class="error_log_email"></span>
+              <span class="email_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -126,7 +126,7 @@
                 class="join_box"
                 placeholder="- 없이 입력해주세요. 예) 0101231234"
               />
-              <span class="error_log_phone_number"></span>
+              <span class="phone_number_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title"><label for="interest">관심사</label></h3>
@@ -244,5 +244,6 @@
         </div>
       </div>
     </div>
+    <script src="./signUp.js"></script>
   </body>
 </html>
