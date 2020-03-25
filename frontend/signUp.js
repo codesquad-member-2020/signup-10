@@ -1,5 +1,5 @@
 import RegExp from "./constants/RegExp.js";
-import { ID_MESSAGE } from "./constants/log.js";
+import { ID_MESSAGE } from "./constants/message.js";
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
@@ -10,7 +10,23 @@ function registerIdInputEventHandler(
   ID_MESSAGE,
   RegExp
 ) {
-  inputDOM.addEventListener("focusout", () => {});
+  inputDOM.addEventListener("focusout", () => {
+    const targetID = event.target.value;
+    if (judgeIDBlank(targetID) === true) {
+      insertIDBlankDiscriminantMessage(IDMessageDOM, ID_MESSAGE.DEFAULT);
+      return;
+    } else if (judgeIDRegExp(targetID, RegExp.ID) !== true) {
+      insertIDRegExpDiscriminantMessage(IDMessageDOM, ID_MESSAGE.ERROR_REGEXP);
+      return;
+    } else {
+      judgeIDServerData(
+        targetID,
+        IDMessageDOM,
+        ID_MESSAGE.SUCCESS,
+        ID_MESSAGE.ERROR_OVERLAP
+      );
+    }
+  });
 }
 
 async function judgeIDServerData(
@@ -24,7 +40,7 @@ async function judgeIDServerData(
   const dataJson = await fetchData.json();
 
   if (dataJson.valid === false) {
-    IDMmessageDOM.style.color = "EB0000";
+    IDMmessageDOM.style.color = "#EB0000";
     IDMmessageDOM.innerText = ERROR_OVERLAP;
     return;
   } else {
@@ -47,11 +63,13 @@ function judgeIDBlank(targetID) {
 }
 
 function insertIDRegExpDiscriminantMessage(IDMessageDOM, ERROR_REGEXP_MESSAGE) {
-  IDMessageDOM.style.color = "EB0000";
+  IDMessageDOM.style.color = "#EB0000";
   IDMessageDOM.innerText = ERROR_REGEXP_MESSAGE;
 }
 
 function insertIDBlankDiscriminantMessage(IDMessageDOM, DEFAULT_MESSAGE) {
-  IDMessageDOM.style.color = "EB0000";
+  IDMessageDOM.style.color = "#EB0000";
   IDMessageDOM.innerText = DEFAULT_MESSAGE;
 }
+
+registerIdInputEventHandler(IDinputDOM, IDMessageDOM, ID_MESSAGE, RegExp);
