@@ -19,3 +19,13 @@ function judgeIDBlank(targetID) {
     return false;
   }
 }
+
+function insertIDRegExpDiscriminantMessage(messageDOM, ERROR_REGEXP_MESSAGE) {
+  messageDOM.style.color = "red";
+  messageDOM.innerText = ERROR_REGEXP_MESSAGE;
+}
+
+function insertIDBlankDiscriminantMessage(messageDOM, DEFAULT_MESSAGE) {
+  messageDOM.style.color = "red";
+  messageDOM.innerText = DEFAULT_MESSAGE;
+}
