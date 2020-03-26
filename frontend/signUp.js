@@ -243,3 +243,22 @@ registerIntersetInputEventHandler(
   INTERESTS_MESSAGE
 );
 registerIntersetCloseBtnEventHandler();
+
+//--------------------초기화 이벤트 구현--------------------
+
+const resetBtnDOM = document.querySelector(".reset_btn");
+const signUpForm = document.querySelector(".join");
+
+function registerResetBtnEventHandler(resetBtnDOM, signUpForm) {
+  resetBtnDOM.addEventListener("click", () => {
+    const userClickValue = confirm(`입력값 초기화에 동의하십니까 ?`);
+
+    if (userClickValue === true) {
+      signUpForm.reset();
+    } else {
+      return;
+    }
+  });
+}
+
+registerResetBtnEventHandler(resetBtnDOM, signUpForm);
