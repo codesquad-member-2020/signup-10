@@ -18,7 +18,7 @@ CREATE TABLE interests
 (
     id       bigint NOT NULL AUTO_INCREMENT,
     user_id  bigint NOT NULL ,
-    content   varchar(25),
+    contents   varchar(25),
     PRIMARY KEY (id),
-    CONSTRAINT fk_interest_to_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE RESTRICT ON UPDATE  RESTRICT
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE RESTRICT ON UPDATE  RESTRICT
 );
