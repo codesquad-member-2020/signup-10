@@ -1,28 +1,62 @@
 package com.team10.signup.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
+
+import java.util.Objects;
 
 public class User {
 
     @Id
-    @JsonProperty
     private Long id;
 
-    @JsonProperty
-    private String userId;
+    private String username;
+    private String password;
+    private String name;
+    private String birthday;
+    private String gender;
+    private String email;
+    private String phoneNumber;
 
-    public User(Long id, String userId) {
-        this.id = id;
-        this.userId = userId;
-    }
-
-    public String getUserId() {
-        return userId;
+    public User(String username, String password, String name, String birthday, String gender, String email, String phoneNumber) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void setId(Long id) {
@@ -30,10 +64,32 @@ public class User {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return username.equals(user.username) &&
+                name.equals(user.name) &&
+                email.equals(user.email) &&
+                phoneNumber.equals(user.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, name, email, phoneNumber);
+    }
+
+    @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userId='" + userId + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", gender='" + gender + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }
