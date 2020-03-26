@@ -8,7 +8,14 @@ export const ID_MESSAGE = {
 export const PASSWORD_MESSAGE = {
   DEFAULT: `비밀번호를 입력해 주세요`,
   SUCCESS: `사용 가능한 비밀번호 입니다.`,
-  ERROR_REGEXP: `8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.`
+  ERROR: {
+    LENGTH: `8자 이상 16자 이하로 입력해주세요.`,
+    NUMBER: `숫자를 최소 1자 이상 포함해주세요.`,
+    UPPERCASE: `영문 대문자를 최소 1자 이상 포함해주세요.`,
+    LOWERCASE: `영문 소문자를 최소 1자 이상 포함해주세요.`,
+    SPECIAL: `특수문자를 최소 1자 이상 포함해주세요.`,
+    ETC: `옳바른 비밀번호를 입력해주세요.`
+  }
 };
 
 export const EMAIL_MESSAGE = {
