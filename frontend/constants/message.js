@@ -17,3 +17,8 @@ export const EMAIL_MESSAGE = {
   ERROR_REGEXP: `형식에 맞지 않는 이메일 입니다.`,
   ERROR_OVERLAP: `이미 사용중이거나 탈퇴한 이메일입니다.`
 };
+
+export const INTERESTS_MESSAGE = {
+  DEFAULT: `관심사를 3개까지 등록 가능합니다.`,
+  SUCCESS: `관심사를 최대치까지 등록하셨습니다.`
+};

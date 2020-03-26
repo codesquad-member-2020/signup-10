@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/singup.css" />
     <title>회원가입</title>
@@ -128,22 +132,26 @@
               />
               <span class="phone_number_message"></span>
             </div>
-            <div class="join_row">
+            <div class="join_row" id="interest">
               <h3 class="join_title"><label for="interest">관심사</label></h3>
-              <input
-                type="text"
-                name="interest"
-                id="interest"
-                class="join_box"
-              />
-              <span class="error_log_interest"></span>
+              <div class="container">
+                <div class="tag-container">
+                  <input
+                    type="text"
+                    name="interest"
+                    id="interest"
+                    class="join_box"
+                  />
+                </div>
+              </div>
+              <span class="interest_message"></span>
             </div>
             <div class="checkbox_area">
               <label for="agreement">약관에 동의합니다.</label>
               <input type="checkbox" name="agreement" id="agreement" disabled />
             </div>
             <div class="btn_area join_flex_box">
-              <button type="button" class="reset_btn join_column">
+              <button type="reset" class="reset_btn join_column">
                 <span class="btn_font">초기화</span>
               </button>
               <button type="submit" class="join_btn join_column">
