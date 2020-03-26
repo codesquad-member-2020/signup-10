@@ -47,6 +47,7 @@ select:focus {
 }
 
 .header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,8 +80,23 @@ select:focus {
   font-size: 20px;
   font-weight: bold;
 }
+.agreement_modal {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 3px solid #ccc;
+  overflow-y: scroll;
+  background-color: white;
+}
+.madal_agree_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
 .madal_content {
-  visibility: hidden;
+  line-height: 20px;
+  word-break: break-all;
 }
 
 .container {
