@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/singup.css" />
     <title>회원가입</title>
@@ -22,7 +26,7 @@
                 <label for="id">아이디</label>
               </h3>
               <input type="text" id="id" name="id" class="join_box" />
-              <span class="error_log_id"></span>
+              <span class="ID_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -34,7 +38,7 @@
                 name="password"
                 class="join_box"
               />
-              <span class="error_log_password"></span>
+              <span class="password_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -46,7 +50,7 @@
                 name="reconfirm_input"
                 class="join_box"
               />
-              <span class="error_log_reconfirm"></span>
+              <span class="password_reconfirm_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -113,7 +117,7 @@
             <div class="join_row">
               <h3 class="join_title"><label for="email">이메일</label></h3>
               <input type="email" name="email" id="email" class="join_box" />
-              <span class="error_log_email"></span>
+              <span class="email_message"></span>
             </div>
             <div class="join_row">
               <h3 class="join_title">
@@ -126,24 +130,28 @@
                 class="join_box"
                 placeholder="- 없이 입력해주세요. 예) 0101231234"
               />
-              <span class="error_log_phone_number"></span>
+              <span class="phone_number_message"></span>
             </div>
-            <div class="join_row">
+            <div class="join_row" id="interest">
               <h3 class="join_title"><label for="interest">관심사</label></h3>
-              <input
-                type="text"
-                name="interest"
-                id="interest"
-                class="join_box"
-              />
-              <span class="error_log_interest"></span>
+              <div class="container">
+                <div class="tag-container">
+                  <input
+                    type="text"
+                    name="interest"
+                    id="interest"
+                    class="join_box"
+                  />
+                </div>
+              </div>
+              <span class="interest_message"></span>
             </div>
             <div class="checkbox_area">
               <label for="agreement">약관에 동의합니다.</label>
               <input type="checkbox" name="agreement" id="agreement" disabled />
             </div>
             <div class="btn_area join_flex_box">
-              <button type="button" class="reset_btn join_column">
+              <button type="button"" class="reset_btn join_column">
                 <span class="btn_font">초기화</span>
               </button>
               <button type="submit" class="join_btn join_column">
@@ -242,7 +250,11 @@
           네이버는 ‘개인정보 유효기간제’에 따라 1년간 서비스를 이용하지 않은
           회원의 개인정보를 별도로 분리 보관하여 관리하고 있습니다.
         </div>
+        <div class="madal_agree_btn">
+          <button>동의</button>
+        </div>
       </div>
     </div>
+    <script src="./signUp.js" type="module"></script>
   </body>
 </html>
