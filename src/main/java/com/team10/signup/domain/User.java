@@ -1,15 +1,25 @@
 package com.team10.signup.domain;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Objects;
 
+@Getter
+@NoArgsConstructor
+@Table("users")
 public class User {
 
     @Id
     private Long id;
 
+    @Column("username")
     private String username;
+
     private String password;
     private String name;
     private String birthday;
@@ -17,6 +27,7 @@ public class User {
     private String email;
     private String phoneNumber;
 
+    @Builder
     public User(String username, String password, String name, String birthday, String gender, String email, String phoneNumber) {
         this.username = username;
         this.password = password;
@@ -27,56 +38,19 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return username.equals(user.username) &&
-                name.equals(user.name) &&
                 email.equals(user.email) &&
                 phoneNumber.equals(user.phoneNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, name, email, phoneNumber);
+        return Objects.hash(username, email, phoneNumber);
     }
 
     @Override

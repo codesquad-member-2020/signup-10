@@ -1,4 +1,4 @@
-package com.team10.signup.result;
+package com.team10.signup.api;
 
 public class Result {
     private boolean valid;

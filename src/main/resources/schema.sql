@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS interests CASCADE;
 CREATE TABLE users
 (
     id bigint NOT NULL AUTO_INCREMENT,
-    username varchar(64) UNIQUE,
+    username varchar(64) UNIQUE NOT NULL ,
     password varchar(64),
     name varchar(32),
     birthday date,
