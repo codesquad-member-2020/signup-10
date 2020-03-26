@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3B2398242BA6190014AE98 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3B2397242BA6190014AE98 /* UIViewExtension.swift */; };
 		8D63A0A42429C8AF00D799F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63A0A32429C8AF00D799F7 /* AppDelegate.swift */; };
 		8D63A0A62429C8AF00D799F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63A0A52429C8AF00D799F7 /* SceneDelegate.swift */; };
 		8D63A0A82429C8AF00D799F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63A0A72429C8AF00D799F7 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D3B2397242BA6190014AE98 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		8D63A0A02429C8AF00D799F7 /* Signup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Signup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D63A0A32429C8AF00D799F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D63A0A52429C8AF00D799F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D3B2399242BA6250014AE98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D3B2397242BA6190014AE98 /* UIViewExtension.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8D63A0972429C8AF00D799F7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		8D63A0A22429C8AF00D799F7 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				8D3B2399242BA6250014AE98 /* Views */,
 				8D63A0A32429C8AF00D799F7 /* AppDelegate.swift */,
 				8D63A0A52429C8AF00D799F7 /* SceneDelegate.swift */,
 				8D63A0A72429C8AF00D799F7 /* ViewController.swift */,
@@ -202,6 +213,7 @@
 			files = (
 				8D63A0A82429C8AF00D799F7 /* ViewController.swift in Sources */,
 				8D63A0A42429C8AF00D799F7 /* AppDelegate.swift in Sources */,
+				8D3B2398242BA6190014AE98 /* UIViewExtension.swift in Sources */,
 				8D63A0A62429C8AF00D799F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
