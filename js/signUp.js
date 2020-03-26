@@ -1,9 +1,9 @@
-import RegExp from "./constants/RegExp.js";
+import RegExp from "../frontend/constants/RegExp.js";
 import {
   ID_MESSAGE,
   EMAIL_MESSAGE,
   INTERESTS_MESSAGE
-} from "./constants/message.js";
+} from "../frontend/constants/message.js";
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
