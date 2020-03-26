@@ -67,7 +67,7 @@
                                     <segue destination="MiN-H9-9XT" kind="show" id="69b-ql-Vyb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AM-Fp-LnI">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 소문자, 숫자, 특수기호(_,-), 5~20자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AM-Fp-LnI">
                                 <rect key="frame" x="36" y="156" width="342" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="W86-0S-2Gn"/>
@@ -83,7 +83,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1K-qt-4vA">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="영문 대/소문자, 숫자, 특수문자(!@#$%) 8~16자" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N1K-qt-4vA">
                                 <rect key="frame" x="36" y="240" width="342" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="PnL-Bw-xdt"/>
@@ -131,15 +131,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용 중인 아이디입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-n9-kei">
+                                <rect key="frame" x="36" y="196" width="342" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전한 비밀번호입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgK-kB-kYR">
+                                <rect key="frame" x="36" y="280" width="342" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 일치하지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDL-3C-0fJ">
+                                <rect key="frame" x="36" y="364" width="342" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름은 필수 입력 항목입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9C-kS-PZZ">
+                                <rect key="frame" x="36" y="448" width="342" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qDL-3C-0fJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="4JY-jc-xgm"/>
+                            <constraint firstItem="BtQ-n9-kei" firstAttribute="top" secondItem="5AM-Fp-LnI" secondAttribute="bottom" constant="2" id="4W7-cP-Bz8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bgK-kB-kYR" secondAttribute="trailing" constant="36" id="4yl-2e-eAz"/>
                             <constraint firstItem="z6t-vV-hK2" firstAttribute="top" secondItem="UaT-Gh-oaM" secondAttribute="bottom" constant="4" id="5tq-gZ-Alv"/>
                             <constraint firstItem="ME6-23-LvC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="5xl-KY-a2R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ME6-23-LvC" secondAttribute="trailing" constant="36" id="6ag-6Z-Qha"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N1K-qt-4vA" secondAttribute="trailing" constant="36" id="AHJ-9q-orT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qqz-Ao-25V" secondAttribute="trailing" constant="36" id="ECX-0D-pwm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vzj-Ut-OLq" secondAttribute="trailing" constant="36" id="ELw-uN-W8N"/>
+                            <constraint firstItem="w9C-kS-PZZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="ILn-Uh-yKM"/>
                             <constraint firstItem="5AM-Fp-LnI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="JBl-XH-E6c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Irr-rq-axq" secondAttribute="trailing" constant="36" id="Jpv-As-QT4"/>
                             <constraint firstItem="vzj-Ut-OLq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="KGT-iO-oPz"/>
@@ -148,7 +176,12 @@
                             <constraint firstItem="27L-pN-suW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MDm-vS-WiH"/>
                             <constraint firstItem="PFx-Nz-w5l" firstAttribute="top" secondItem="vzj-Ut-OLq" secondAttribute="bottom" constant="4" id="OoL-W6-ei0"/>
                             <constraint firstItem="PFx-Nz-w5l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Su3-7e-Gj8"/>
+                            <constraint firstItem="bgK-kB-kYR" firstAttribute="top" secondItem="N1K-qt-4vA" secondAttribute="bottom" constant="2" id="Uo4-30-1z2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BtQ-n9-kei" secondAttribute="trailing" constant="36" id="Z6z-9m-F7U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w9C-kS-PZZ" secondAttribute="trailing" constant="36" id="Zot-kG-JyU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z6t-vV-hK2" secondAttribute="trailing" constant="36" id="a8X-lm-6i2"/>
+                            <constraint firstItem="bgK-kB-kYR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="bzJ-3T-fgg"/>
+                            <constraint firstItem="qDL-3C-0fJ" firstAttribute="top" secondItem="PFx-Nz-w5l" secondAttribute="bottom" constant="2" id="cGT-am-qzE"/>
                             <constraint firstItem="qqz-Ao-25V" firstAttribute="top" secondItem="5AM-Fp-LnI" secondAttribute="bottom" constant="25" id="ckD-eC-Jb2"/>
                             <constraint firstItem="z6t-vV-hK2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="clB-4l-LrE"/>
                             <constraint firstItem="qqz-Ao-25V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="d3i-g2-f0m"/>
@@ -158,7 +191,10 @@
                             <constraint firstItem="N1K-qt-4vA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="gBK-GS-Thg"/>
                             <constraint firstItem="Irr-rq-axq" firstAttribute="top" secondItem="ME6-23-LvC" secondAttribute="bottom" constant="25" id="hXG-kU-w9n"/>
                             <constraint firstItem="5AM-Fp-LnI" firstAttribute="top" secondItem="Irr-rq-axq" secondAttribute="bottom" constant="4" id="jnq-rg-hNv"/>
+                            <constraint firstItem="w9C-kS-PZZ" firstAttribute="top" secondItem="z6t-vV-hK2" secondAttribute="bottom" constant="2" id="nu4-8J-mml"/>
+                            <constraint firstItem="BtQ-n9-kei" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="rGD-6x-5es"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5AM-Fp-LnI" secondAttribute="trailing" constant="36" id="rnq-qx-nZD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qDL-3C-0fJ" secondAttribute="trailing" constant="36" id="vSW-ee-FCt"/>
                             <constraint firstItem="Irr-rq-axq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="vZL-Dv-Ryt"/>
                             <constraint firstItem="UaT-Gh-oaM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="vzk-FI-fwT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PFx-Nz-w5l" secondAttribute="trailing" constant="36" id="xaM-OO-ezg"/>
