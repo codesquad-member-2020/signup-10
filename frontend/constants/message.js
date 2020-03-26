@@ -7,7 +7,7 @@ export const ID_MESSAGE = {
 
 export const PASSWORD_MESSAGE = {
   DEFAULT: `비밀번호를 입력해 주세요`,
-  SUCCESS: `사용 가능한 비밀번호 입니다.`,
+  SAFETY: `안전한 비밀번호 입니다.`,
   ERROR: {
     LENGTH: `8자 이상 16자 이하로 입력해주세요.`,
     NUMBER: `숫자를 최소 1자 이상 포함해주세요.`,
@@ -16,6 +16,11 @@ export const PASSWORD_MESSAGE = {
     SPECIAL: `특수문자를 최소 1자 이상 포함해주세요.`,
     ETC: `옳바른 비밀번호를 입력해주세요.`
   }
+};
+
+export const PASSWORD_RECONFIRM_MESSAGE = {
+  SUCCESS: `비밀번호가 일치합니다`,
+  ERROR: `비밀번호가 일치하지 않습니다.`
 };
 
 export const EMAIL_MESSAGE = {

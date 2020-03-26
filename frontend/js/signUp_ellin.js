@@ -1,11 +1,13 @@
 import RegExp from "/constants/RegExp.js";
-import { PASSWORD_MESSAGE } from "/constants/message.js";
+import {
+  PASSWORD_MESSAGE,
+  PASSWORD_RECONFIRM_MESSAGE
+} from "/constants/message.js";
 
-// init 으로 모든 이벤트 핸들러를 설치해준다.
-function init() {}
-
-const singUpForm = document.querySelector(".join");
-singUpForm.addEventListener("focusout", eventHandler.bind(event));
+(function() {
+  const singUpForm = document.querySelector(".join");
+  singUpForm.addEventListener("focusout", eventHandler.bind(event));
+})();
 
 const selector = {
   PASSWORD: "password",
@@ -13,8 +15,14 @@ const selector = {
   BIRTHDAY: { YEAR: "year", MONTH: "month", DAY: "day" }
 };
 
-const message = {
-  PASSWORD: ".password_message"
+const messageArea = {
+  PASSWORD: ".password_message",
+  PASSWORD_RECONFIRM: ".password_reconfirm_message"
+};
+
+const inputValue = {
+  password: false,
+  passwordReconfirm: false
 };
 
 function eventHandler({ target: { id, value } }) {
@@ -22,10 +30,11 @@ function eventHandler({ target: { id, value } }) {
 
   switch (id) {
     case selector.PASSWORD:
-    case selector.PASSWORD_RECONFIRM:
       validatePassword(value);
       break;
 
+    case selector.PASSWORD_RECONFIRM:
+      validatePasswordReconfirm(value);
     case birthday.YEAR:
     case birthday.MONTH:
     case birthday.DAY:
@@ -34,14 +43,16 @@ function eventHandler({ target: { id, value } }) {
 }
 
 function validatePassword(password) {
-  const messageArea = document.querySelector(message.PASSWORD);
-  const successRegExp = RegExp.PASSWORD.SUCCESS;
-  const successMessage = PASSWORD_MESSAGE.SUCCESS;
+  const passwordMessageArea = document.querySelector(messageArea.PASSWORD);
+  const safetyRegExp = RegExp.PASSWORD.SAFETY;
+  const safetyMessage = PASSWORD_MESSAGE.SAFETY;
 
-  if (isBlank(password)) printMessage(PASSWORD_MESSAGE.DEFAULT, messageArea);
-  else if (isValidValue(successRegExp, password))
-    printMessage(successMessage, messageArea, "#00c850");
-  else validateFailure(password, messageArea);
+  if (isBlank(password))
+    printMessage(PASSWORD_MESSAGE.DEFAULT, passwordMessageArea);
+  else if (isValidValue(safetyRegExp, password)) {
+    printMessage(safetyMessage, passwordMessageArea, "#00c850");
+    return (inputValue.password = password);
+  } else validateFailure(password, passwordMessageArea);
 }
 
 function isBlank(value) {
@@ -74,21 +85,14 @@ function isValidValue(regexp, value) {
   return regexp.test(value);
 }
 
-//1. 1번 비밀번호 값을 가져온다
-//2. 비밀번호가 조건에 부합하는지 확인한다
-//8~16자의 영문 대, 소문자, 숫자, 특수문자의 조합이어야 한다.
-// 2-1 비밀번호가 부합하지 않으면?
-// 2-1-1 갯수가 안맞을때 오류메세지 띄운다
-// 2-1-2 대문자 없을때 오류메세지
-// 2-1-3 특수문자 없을때 오류메세지
-// 2-2 비밀번호가 부합하면?
-//  2-2-1 안전 메세지 출력
+function validatePasswordReconfirm(value) {
+  const passwordMessageArea = document.querySelector(
+    messageArea.PASSWORD_RECONFIRM
+  );
+  const successMessage = PASSWORD_RECONFIRM_MESSAGE.SUCCESS;
+  const errorMessage = PASSWORD_RECONFIRM_MESSAGE.ERROR;
 
-// 예) 8자 이상 16자 이하로 입력해주세요. (빨강)
-//      영문 대문자를 최소 1자 이상 포함해주세요. (빨강)
-//      숫자를 최소 1자 이상 포함해주세요. (빨강)
-//      특수문자를 최소 1자 이상 포함해주세요. (빨강
-
-//3. 2.번 비밀번호 값을 가져온다.
-// 3-1 1번 비밀번호 값과 일치하지 않을 때 다음과 같은 메세지가 출력된다.
-// 3-2 1번 비밀번호 값과 일치할때는 합격 메세지 출력
+  if (value === inputValue.password)
+    printMessage(successMessage, passwordMessageArea, "#00c850");
+  else printMessage(errorMessage, passwordMessageArea);
+}
