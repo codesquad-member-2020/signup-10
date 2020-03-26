@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Basic Info View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Signup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="BasicInfoViewController" customModule="Signup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MiN-H9-9XT" kind="show" id="69b-ql-Vyb"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AM-Fp-LnI">
                                 <rect key="frame" x="36" y="156" width="342" height="38"/>
@@ -168,8 +171,54 @@
             </objects>
             <point key="canvasLocation" x="139" y="139"/>
         </scene>
+        <!--Personal Info View Controller-->
+        <scene sceneID="Cnb-IL-e6q">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="MiN-H9-9XT" customClass="PersonalInfoViewController" customModule="Signup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="15M-Pn-5Rl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSu-wF-vpw">
+                                <rect key="frame" x="164.5" y="426" width="85" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Htl-EW-ftv"/>
+                                    <constraint firstAttribute="width" constant="85" id="vA5-oA-lfn"/>
+                                </constraints>
+                                <color key="tintColor" red="0.019607843140000001" green="0.65098039220000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title=" 이전" image="chevron.left.circle.fill" catalog="system">
+                                    <color key="titleColor" red="0.019607843140000001" green="0.65098039220000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="1Ng-J9-HN8" kind="unwind" unwindAction="backToBasicInfo:" id="ghN-n5-ISW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GSu-wF-vpw" firstAttribute="centerX" secondItem="15M-Pn-5Rl" secondAttribute="centerX" id="7Mu-mF-WV6"/>
+                            <constraint firstItem="GSu-wF-vpw" firstAttribute="centerY" secondItem="15M-Pn-5Rl" secondAttribute="centerY" id="cJs-D7-FY1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wes-ot-Qtx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lKx-Rp-yNd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Z5-ld-Vjn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1Ng-J9-HN8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="918" y="141"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="chevron.left.circle.fill" catalog="system" width="64" height="60"/>
         <image name="chevron.right.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
