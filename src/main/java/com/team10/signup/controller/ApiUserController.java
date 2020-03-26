@@ -18,14 +18,14 @@ public class ApiUserController {
 
     @PostMapping("")
     public User create(User user) {
-        logger.info("User : '{}'" , user);
+        logger.info("User : '{}'", user);
         return userService.save(user);
     }
 
     @GetMapping("/check/username/{username}")
     public Result checkUsername(@PathVariable String username) {
         logger.info("Username: {}", username);
-        if (userService.findByUsername(username).equals(username)) {
+        if (userService.findByUsername(username).isPresent()) {
             return Result.fail();
         }
         return Result.ok();
@@ -34,7 +34,7 @@ public class ApiUserController {
     @GetMapping("/check/email/{email}")
     public Result checkEmail(@PathVariable String email) {
         logger.info("email: {}", email);
-        if (userService.findByEmail(email).equals(email)) {
+        if (userService.findByEmail(email).isPresent()) {
             return Result.fail();
         }
         return Result.ok();
@@ -43,10 +43,11 @@ public class ApiUserController {
     @GetMapping("/check/phone/{phoneNumber}")
     public Result checkPhoneNumber(@PathVariable String phoneNumber) {
         logger.info("email: {}", phoneNumber);
-        if (userService.findByPhoneNumber(phoneNumber).equals(phoneNumber)) {
+        if (userService.findByPhoneNumber(phoneNumber).isPresent()) {
             return Result.fail();
         }
         return Result.ok();
     }
+
 
 }

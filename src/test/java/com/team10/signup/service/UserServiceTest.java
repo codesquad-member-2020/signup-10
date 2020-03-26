@@ -30,7 +30,7 @@ class UserServiceTest {
     @Test
     public void 중복검사() {
         userService.save(user);
-        assertThat(userService.findByUsername(user.getUsername())).isEqualTo("1234");
+        assertThat(userService.findByUsername("1234").isPresent()).isTrue();
     }
 
 
