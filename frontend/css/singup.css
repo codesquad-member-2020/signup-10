@@ -1,0 +1,177 @@
+h3 {
+  margin-bottom: 5px;
+}
+span {
+  font-size: 12px;
+}
+label {
+  font-size: 14px;
+}
+button {
+  width: 230px;
+  height: 60px;
+  color: white;
+  background-color: #00c850;
+  border: none;
+}
+
+input:hover {
+  border-color: #00c850;
+  border-width: 3px;
+}
+
+input:focus {
+  border-color: #00c850;
+  border-width: 3px;
+}
+
+select:hover {
+  border-color: #00c850;
+  border-width: 3px;
+}
+
+select:focus {
+  border-color: #00c850;
+  border-width: 3px;
+}
+
+.join {
+  width: 480px;
+  height: 500px;
+}
+.join_row {
+  height: 80px;
+}
+.error_log_interest {
+  display: block;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign_up_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  height: 100px;
+}
+
+.sign_up_title h1 {
+  font-size: 40px;
+  font-weight: 900;
+  color: #00c850;
+}
+.join_flex_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn_area {
+  height: 80px;
+}
+
+.btn_font {
+  font-size: 20px;
+  font-weight: bold;
+}
+.madal {
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.agreement_modal {
+  position: absolute;
+  width: 500px;
+  height: 450px;
+  border: 3px solid #ccc;
+  background-color: white;
+}
+.madal_content {
+  border: 1px solid #ccc;
+  margin: 10px;
+  height: 300px;
+  overflow-y: scroll;
+  font-size: 13px;
+}
+.madal_agree_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.madal_content {
+  line-height: 20px;
+  word-break: break-all;
+}
+
+.container {
+  width: 100%;
+  height: 0 auto;
+  margin: auto;
+  padding: auto;
+}
+.tag-container {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 6px;
+}
+.tag-container .tag {
+  height: 30px;
+  margin: 5px;
+  padding: 5px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  color: #333;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px #fff;
+  cursor: default;
+}
+.tag i {
+  font-size: 16px;
+  color: #666;
+  margin-left: 5px;
+}
+.tag-container input {
+  padding: 5px;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  font-family: "Rubik";
+  color: #333;
+  flex: 1;
+}
+.checkbox_area {
+  margin-top: 15px;
+}
+.blind {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+}
+
+input#year {
+  width: 150px;
+}
+
+select#month {
+  width: 150px;
+}
+
+input#day {
+  width: 150px;
+}
