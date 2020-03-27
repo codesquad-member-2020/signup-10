@@ -40,3 +40,18 @@ export const PHONE_NUMBER_MESSAGE = {
   ERROR_REGEXP: `형식에 맞지 않는 번호입니다.`,
   SUCCESS: `번호 입력이 완료 됬습니다.`
 };
+
+export const BIRTHDAY_MESSAGE = {
+  NUMBER: `숫자만 입력해 주세요`,
+  YEAR: {
+    DEFAULT: `태어난 년도 4자리를 정확하게 입력하세요.`,
+    ERROR: `만 14세 이상만 가입 가능합니다.`
+  },
+  MONTH: {
+    DEFAULT: `태어난 월을 선택하세요.`
+  },
+  DAY: {
+    DEFAULT: `태어난 일(날짜) 2자리를 정확하게 입력하세요.`,
+    ERROR: `태어난 날짜를 다시 확인해주세요.`
+  }
+};
