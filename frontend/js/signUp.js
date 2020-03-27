@@ -2,10 +2,14 @@ import RegExp from "../constants/RegExp.js";
 import {
   ID_MESSAGE,
   EMAIL_MESSAGE,
-  INTERESTS_MESSAGE
+  INTERESTS_MESSAGE,
+  PHONE_NUMBER_MESSAGE
 } from "../constants/message.js";
+import validationState from "../js/validationState.js";
 
-const IDinputDOM = document.querySelector("#id");
+console.log(validationState);
+
+const IDinputDOM = document.querySelector("#user_id");
 const IDMessageDOM = document.querySelector(".ID_message");
 
 //--------------------ID 유효성 검사--------------------
@@ -161,6 +165,74 @@ registerEmailInputEventHandler(
   EMAIL_MESSAGE,
   RegExp
 );
+
+//--------------------휴대전화------------------
+const phoneNumberInputDOM = document.querySelector("#phone_number");
+const phoneNumberMessageDOM = document.querySelector(".phone_number_message");
+
+function registerPhoneNumberInputEventHandler(
+  phoneNumberInputDOM,
+  phoneNumberMessageDOM,
+  PHONE_NUMBER_MESSAGE,
+  RegExp
+) {
+  phoneNumberInputDOM.addEventListener("focusout", () => {
+    const targetPhoneNumber = event.target.value;
+
+    if (judgePhoneNumberBlank(targetPhoneNumber)) {
+      insertPhoneNumberBlankDiscriminantMessage(
+        phoneNumberMessageDOM,
+        PHONE_NUMBER_MESSAGE.DEFAULT
+      );
+    } else if (
+      !judgePhoneNumberRegExp(targetPhoneNumber, RegExp.PHONE_NUMBER)
+    ) {
+      insertPhoneNumberRegExpDiscriminantMessage(
+        phoneNumberMessageDOM,
+        PHONE_NUMBER_MESSAGE.ERROR_REGEXP
+      );
+    } else {
+      phoneNumberMessageDOM.style.color = "#00c850";
+      phoneNumberMessageDOM.innerText = PHONE_NUMBER_MESSAGE.SUCCESS;
+    }
+  });
+}
+
+function judgePhoneNumberRegExp(targetPhoneNumber, RegExp) {
+  return RegExp.test(targetPhoneNumber);
+}
+
+function judgePhoneNumberBlank(targetPhoneNumber) {
+  if (targetPhoneNumber === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function insertPhoneNumberRegExpDiscriminantMessage(
+  phoneNumberMessageDOM,
+  ERROR_REGEXP_MESSAGE
+) {
+  phoneNumberMessageDOM.style.color = "#EB0000";
+  phoneNumberMessageDOM.innerText = ERROR_REGEXP_MESSAGE;
+}
+
+function insertPhoneNumberBlankDiscriminantMessage(
+  phoneNumberMessageDOM,
+  DEFAULT_MESSAGE
+) {
+  phoneNumberMessageDOM.style.color = "#EB0000";
+  phoneNumberMessageDOM.innerText = DEFAULT_MESSAGE;
+}
+
+registerPhoneNumberInputEventHandler(
+  phoneNumberInputDOM,
+  phoneNumberMessageDOM,
+  PHONE_NUMBER_MESSAGE,
+  RegExp
+);
+
 //--------------------관심사--------------------
 
 const intersetInputDOM = document.querySelector(".tag-container input");
@@ -270,8 +342,6 @@ const blindArea = document.querySelector(".blind_target");
 const clauseModal = document.querySelector(".madal");
 const modalAgreementBtn = document.querySelector(".madal_agree_btn button");
 const agreementCheckBox = document.querySelector("#agreement");
-
-console.dir((agreementCheckBox.disabled = false));
 
 agreementBtn.addEventListener("click", () => {
   blindArea.className = "blind";
