@@ -1,8 +1,8 @@
 package com.team10.signup.controller;
 
 import com.team10.signup.api.Result;
-import com.team10.signup.domain.Interest;
 import com.team10.signup.domain.User;
+import com.team10.signup.domain.UserRequestBody;
 import com.team10.signup.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,9 +18,10 @@ public class ApiUserController {
     private final UserService userService;
 
     @PostMapping("")
-    public User create(@RequestBody User user, String interest) {
-        logger.info("User : '{}'", user);
-        return userService.combineUser(user, interest);
+    public Result create(@RequestBody UserRequestBody userRequestBody) {
+        logger.info("User : '{}'", userRequestBody);
+        userService.settingUser(userRequestBody);
+        return Result.ok();
     }
 
     @GetMapping("/username/{username}")
@@ -49,6 +50,4 @@ public class ApiUserController {
         }
         return Result.ok();
     }
-
-
 }

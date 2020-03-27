@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS interest CASCADE;
 DROP TABLE IF EXISTS interests CASCADE;
 
 CREATE TABLE users
@@ -7,18 +8,16 @@ CREATE TABLE users
     username varchar(64) UNIQUE NOT NULL ,
     password varchar(64),
     name varchar(32),
-    birthday date,
+    birthday varchar (32),
     gender varchar (8),
     email varchar (64) UNIQUE,
     phone_number varchar (32) UNIQUE,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE interests
+CREATE TABLE interest
 (
-    id       bigint NOT NULL AUTO_INCREMENT,
-    user_id  bigint NOT NULL ,
+    id  serial primary key,
+    users INTEGER references users(id),
     contents   varchar(25),
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE RESTRICT ON UPDATE  RESTRICT
 );

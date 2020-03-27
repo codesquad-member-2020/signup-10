@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @NoArgsConstructor
@@ -26,9 +27,11 @@ public class User {
     private String gender;
     private String email;
     private String phoneNumber;
+    private Set<Interest> interest;
 
     @Builder
-    public User(String username, String password, String name, String birthday, String gender, String email, String phoneNumber) {
+    public User(String username, String password, String name, String birthday,
+                String gender, String email, String phoneNumber, Set<Interest> interest) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -36,6 +39,7 @@ public class User {
         this.gender = gender;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.interest = interest;
     }
 
     @Override
@@ -64,6 +68,7 @@ public class User {
                 ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", interest=" + interest +
                 '}';
     }
 }
