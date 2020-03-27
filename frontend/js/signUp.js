@@ -1,9 +1,9 @@
-import RegExp from "/constants/RegExp.js";
+import RegExp from "../constants/RegExp.js";
 import {
   ID_MESSAGE,
   EMAIL_MESSAGE,
   INTERESTS_MESSAGE
-} from "/constants/message.js";
+} from "../constants/message.js";
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
@@ -262,3 +262,24 @@ function registerResetBtnEventHandler(resetBtnDOM, signUpForm) {
 }
 
 registerResetBtnEventHandler(resetBtnDOM, signUpForm);
+
+//--------------------약관동의------------------------------
+
+const agreementBtn = document.querySelector(".agreement_btn");
+const blindArea = document.querySelector(".blind_target");
+const clauseModal = document.querySelector(".madal");
+const modalAgreementBtn = document.querySelector(".madal_agree_btn button");
+const agreementCheckBox = document.querySelector("#agreement");
+
+console.dir((agreementCheckBox.disabled = false));
+
+agreementBtn.addEventListener("click", () => {
+  blindArea.className = "blind";
+  clauseModal.style.visibility = "unset";
+});
+
+modalAgreementBtn.addEventListener("click", () => {
+  blindArea.className = "blind_target";
+  clauseModal.style.visibility = "hidden";
+  agreementCheckBox.disabled = false;
+});
