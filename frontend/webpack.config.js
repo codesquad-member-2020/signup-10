@@ -2,7 +2,11 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: { signup: "./js/signUp.js", signUp_ellin: "./js/signUp_ellin.js" },
+  entry: {
+    signup: "./js/signUp.js",
+    signUp_ellin: "./js/signUp_ellin.js",
+    login: "./js/login.js"
+  },
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "[name]_bundle.js"
