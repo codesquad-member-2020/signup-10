@@ -1,0 +1,2 @@
+INSERT INTO USERS (ID, USERNAME, PASSWORD, NAME, BIRTHDAY, GENDER, EMAIL, PHONE_NUMBER)
+ VALUES (NULL, 'abcdefghij', '1234', 'sunny', '2020-04-25', 'male', 'sunny@gmail.com', '01012345678');
