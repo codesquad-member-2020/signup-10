@@ -1,9 +1,9 @@
-import RegExp from "./constants/RegExp.js";
+import RegExp from "/constants/RegExp.js";
 import {
   ID_MESSAGE,
   EMAIL_MESSAGE,
   INTERESTS_MESSAGE
-} from "./constants/message.js";
+} from "/constants/message.js";
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
@@ -117,7 +117,7 @@ async function judgeEmailServerData(
   SUCCESS_MESSAGE,
   ERROR_OVERLAP
 ) {
-  const url = `server email 유효성 판별 url${targetEmail}`;
+  const url = `https://codesquad-group10.herokuapp.com/api/users/check/email/${targetEmail}`;
   const fetchData = await fetch(url);
   const dataJson = await fetchData.json();
 
