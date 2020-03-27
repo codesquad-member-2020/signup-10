@@ -39,12 +39,4 @@ class InterestRepositoryTest {
                 .phoneNumber("0101234")
                 .build();
     }
-
-
-    @Test
-    public void 관심도추가() {
-        Interest interest = new Interest(null, user, "웹툰");
-        interestRepository.save(interest);
-    }
-
 }

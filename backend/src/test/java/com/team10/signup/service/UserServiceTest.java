@@ -26,12 +26,4 @@ class UserServiceTest {
                 .phoneNumber("0101234")
                 .build();
     }
-
-    @Test
-    public void 중복검사() {
-        userService.save(user);
-        assertThat(userService.findByUsername("1234").isPresent()).isTrue();
-    }
-
-
 }

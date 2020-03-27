@@ -13,21 +13,19 @@ public class Interest {
     private Long id;
 
     @Column("user_id")
-    private User userId;
+    private Long user;
 
     private String contents;
 
-    public Interest(Long id, User userId, String contents) {
-        this.id = id;
-        this.userId = userId;
+    public Interest(Long user, String contents) {
+        this.user = user;
         this.contents = contents;
     }
 
     @Override
     public String toString() {
         return "Interest{" +
-                "id=" + id +
-                ", user=" + userId +
+                "user=" + user +
                 ", contents='" + contents + '\'' +
                 '}';
     }

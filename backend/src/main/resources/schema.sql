@@ -9,8 +9,8 @@ CREATE TABLE users
     name varchar(32),
     birthday date,
     gender varchar (8),
-    email varchar (64),
-    phone_number varchar (32),
+    email varchar (64) UNIQUE,
+    phone_number varchar (32) UNIQUE,
     PRIMARY KEY (id)
 );
 
