@@ -15,8 +15,13 @@
 		8D63A0AD2429C8B300D799F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D63A0AC2429C8B300D799F7 /* Assets.xcassets */; };
 		8D63A0B02429C8B300D799F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D63A0AE2429C8B300D799F7 /* LaunchScreen.storyboard */; };
 		8D63A0BB2429C8B300D799F7 /* SignupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D63A0BA2429C8B300D799F7 /* SignupTests.swift */; };
-		8D915E89242CF70F00C89C07 /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E88242CF70F00C89C07 /* PasswordValidation.swift */; };
+		8D915E89242CF70F00C89C07 /* PasswordFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E88242CF70F00C89C07 /* PasswordFieldDelegate.swift */; };
 		8D915E8C242D14E100C89C07 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E8B242D14E100C89C07 /* StringExtension.swift */; };
+		8D915E8F242DD5B000C89C07 /* AccountFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E8E242DD5B000C89C07 /* AccountFieldDelegate.swift */; };
+		8D915E91242DD7A700C89C07 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E90242DD7A700C89C07 /* PasswordValidator.swift */; };
+		8D915E93242DD98400C89C07 /* AccountValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E92242DD98400C89C07 /* AccountValidator.swift */; };
+		8D915E95242DE79D00C89C07 /* TextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E94242DE79D00C89C07 /* TextFieldValidator.swift */; };
+		8D915E97242DE95300C89C07 /* CustomFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D915E96242DE95300C89C07 /* CustomFieldDelegate.swift */; };
 		8DB7B785242CA2AD0012E7DD /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7B784242CA2AD0012E7DD /* PersonalInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +48,14 @@
 		8D63A0B62429C8B300D799F7 /* SignupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D63A0BA2429C8B300D799F7 /* SignupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTests.swift; sourceTree = "<group>"; };
 		8D63A0BC2429C8B300D799F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D915E88242CF70F00C89C07 /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		8D915E88242CF70F00C89C07 /* PasswordFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldDelegate.swift; sourceTree = "<group>"; };
 		8D915E8B242D14E100C89C07 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8D915E8D242DD43400C89C07 /* Signup.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Signup.entitlements; sourceTree = "<group>"; };
+		8D915E8E242DD5B000C89C07 /* AccountFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldDelegate.swift; sourceTree = "<group>"; };
+		8D915E90242DD7A700C89C07 /* PasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		8D915E92242DD98400C89C07 /* AccountValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountValidator.swift; sourceTree = "<group>"; };
+		8D915E94242DE79D00C89C07 /* TextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidator.swift; sourceTree = "<group>"; };
+		8D915E96242DE95300C89C07 /* CustomFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFieldDelegate.swift; sourceTree = "<group>"; };
 		8DB7B784242CA2AD0012E7DD /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,7 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				8D915E8B242D14E100C89C07 /* StringExtension.swift */,
-				8D915E88242CF70F00C89C07 /* PasswordValidation.swift */,
+				8D915E96242DE95300C89C07 /* CustomFieldDelegate.swift */,
+				8D915E94242DE79D00C89C07 /* TextFieldValidator.swift */,
+				8D915E8E242DD5B000C89C07 /* AccountFieldDelegate.swift */,
+				8D915E88242CF70F00C89C07 /* PasswordFieldDelegate.swift */,
+				8D915E90242DD7A700C89C07 /* PasswordValidator.swift */,
+				8D915E92242DD98400C89C07 /* AccountValidator.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -238,12 +253,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D915E95242DE79D00C89C07 /* TextFieldValidator.swift in Sources */,
+				8D915E93242DD98400C89C07 /* AccountValidator.swift in Sources */,
+				8D915E97242DE95300C89C07 /* CustomFieldDelegate.swift in Sources */,
 				8D63A0A82429C8AF00D799F7 /* BasicInfoViewController.swift in Sources */,
+				8D915E8F242DD5B000C89C07 /* AccountFieldDelegate.swift in Sources */,
 				8D915E8C242D14E100C89C07 /* StringExtension.swift in Sources */,
 				8D63A0A42429C8AF00D799F7 /* AppDelegate.swift in Sources */,
 				8DB7B785242CA2AD0012E7DD /* PersonalInfoViewController.swift in Sources */,
-				8D915E89242CF70F00C89C07 /* PasswordValidation.swift in Sources */,
+				8D915E89242CF70F00C89C07 /* PasswordFieldDelegate.swift in Sources */,
 				8D3B2398242BA6190014AE98 /* UIViewExtension.swift in Sources */,
+				8D915E91242DD7A700C89C07 /* PasswordValidator.swift in Sources */,
 				8D63A0A62429C8AF00D799F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -131,7 +131,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용 중인 아이디입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-n9-kei">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용 중인 아이디입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtQ-n9-kei">
                                 <rect key="frame" x="36" y="196" width="342" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,7 +203,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="idField" destination="5AM-Fp-LnI" id="2U3-kX-wsX"/>
+                        <outlet property="accountField" destination="5AM-Fp-LnI" id="2U3-kX-wsX"/>
+                        <outlet property="accountLabel" destination="BtQ-n9-kei" id="7pk-8V-1yX"/>
                         <outlet property="passwordField" destination="N1K-qt-4vA" id="Kuj-tG-Gbe"/>
                         <outlet property="passwordLabel" destination="bgK-kB-kYR" id="bhO-Ut-ULm"/>
                     </connections>
