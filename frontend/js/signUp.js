@@ -6,6 +6,8 @@ import {
   PHONE_NUMBER_MESSAGE
 } from "../constants/message.js";
 import validationState from "../js/validationState.js";
+import reset from "../css/reset.css";
+import css from "../css/singup.css";
 
 console.log(validationState);
 

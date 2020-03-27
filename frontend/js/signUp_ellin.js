@@ -3,6 +3,7 @@ import {
   PASSWORD_MESSAGE,
   PASSWORD_RECONFIRM_MESSAGE
 } from "../constants/message.js";
+import css from "../css/singup.css";
 
 (function() {
   const singUpForm = document.querySelector(".join");
