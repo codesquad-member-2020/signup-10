@@ -34,3 +34,9 @@ export const INTERESTS_MESSAGE = {
   DEFAULT: `관심사를 3개까지 등록 가능합니다.`,
   SUCCESS: `관심사를 최대치까지 등록하셨습니다.`
 };
+
+export const PHONE_NUMBER_MESSAGE = {
+  DEFAULT: `번호를 입력해 주세요.`,
+  ERROR_REGEXP: `형식에 맞지 않는 번호입니다.`,
+  SUCCESS: `번호 입력이 완료 됬습니다.`
+};
