@@ -7,7 +7,8 @@ const RegExp = {
     UPPERCASE: /[A-Z]/g,
     LOWERCASE: /[a-z]/g,
     SPECIAL: /[~!@#$%^&*()_+|<>?:{}]/gi
-  }
+  },
+  PHONE_NUMBER: /^010\d{3,4}\d{4}$/
 };
 
 export default RegExp;

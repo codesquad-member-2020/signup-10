@@ -1,8 +1,8 @@
-import RegExp from "/constants/RegExp.js";
+import RegExp from "../constants/RegExp.js";
 import {
   PASSWORD_MESSAGE,
   PASSWORD_RECONFIRM_MESSAGE
-} from "/constants/message.js";
+} from "../constants/message.js";
 
 (function() {
   const singUpForm = document.querySelector(".join");

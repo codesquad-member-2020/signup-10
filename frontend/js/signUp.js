@@ -4,6 +4,9 @@ import {
   EMAIL_MESSAGE,
   INTERESTS_MESSAGE
 } from "../constants/message.js";
+import validationState from "../js/validationState.js";
+
+console.log(validationState);
 
 const IDinputDOM = document.querySelector("#id");
 const IDMessageDOM = document.querySelector(".ID_message");
@@ -270,8 +273,6 @@ const blindArea = document.querySelector(".blind_target");
 const clauseModal = document.querySelector(".madal");
 const modalAgreementBtn = document.querySelector(".madal_agree_btn button");
 const agreementCheckBox = document.querySelector("#agreement");
-
-console.dir((agreementCheckBox.disabled = false));
 
 agreementBtn.addEventListener("click", () => {
   blindArea.className = "blind";
